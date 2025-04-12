@@ -7,40 +7,24 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-	    "hyprland/workspaces",
-	    "custom/playerctl"
-	    
+        "hyprland/workspaces",
+        "custom/playerctl"
     ],
     "modules-center": [
-	    "custom/wayves_left",
-	    "clock",
-	    "custom/wayves_right"
+        "custom/wayves_left",
+        "clock",
+        "custom/wayves_right"
     ],
     "modules-right": [
-    "hyprland/window",
-    "tray", 
-    "pulseaudio" ,
-    "cpu" ,
-    "memory",
-    "custom/power"
-    ] ,
+        "hyprland/window",
+        "tray", 
+        "network",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "custom/power"
+    ],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -60,34 +44,8 @@
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
-    "hyprland/workspaces":{
-   	 "format": "{}"
-    },
-    "mpd": {
-        "format": "{title} - {artist} ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+    "hyprland/workspaces": {
+        "format": "<span font-weight=\"bold\">{}</span>"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -97,83 +55,35 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
         "timezone": "America/Porto_Velho",
-	"tootip": true,
+        "tooltip": true,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-
+        "format": "<span font-weight=\"bold\">{:%H:%M}</span>",
+        "format-alt": "<span font-weight=\"bold\">{:%Y-%m-%d}</span>"
     },
-
     "cpu": {
-        "format": "{usage}% ",
+        "format": "<span font-weight=\"bold\">{usage}% </span>",
         "tooltip": true
     },
     "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "<span font-weight=\"bold\">{}% </span>"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "<span font-weight=\"bold\">{essid} ({signalStrength}%) </span>",
+        "format-ethernet": "<span font-weight=\"bold\">{} </span>",
+        "tooltip-format": "<span font-weight=\"bold\">{ifname} via {gwaddr} </span>",
+        "format-linked": "<span font-weight=\"bold\">{ifname} (No IP) </span>",
+        "format-disconnected": "<span font-weight=\"bold\">Disconnected ⚠</span>",
+        "format-alt": "<span font-weight=\"bold\">{ifname}: {ipaddr}/{cidr}</span>"
     },
     "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "scroll-step": 1,
+        "format": "<span font-weight=\"bold\">{volume}% {icon}</span> ",
+        "format-bluetooth": "<span font-weight=\"bold\">{volume}% {icon} {format_source}</span>",
+        "format-bluetooth-muted": "<span font-weight=\"bold\"> {icon} {format_source}</span>",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -185,45 +95,32 @@
         },
         "on-click": "pavucontrol"
     },
-    //I stole from here https://github.com/jvc84/wayves
     "custom/wayves": {
-	"format": "{}",
-	"exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
-	},
+        "format": "<span font-weight=\"bold\">{}</span>",
+        "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
+    },
     "custom/wayves_left": {
-	"format": "{}",
+        "format": "<span font-weight=\"bold\">{}</span>",
         "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
     },
     "custom/wayves_right": {
-	"format": "{}",
-	"exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
+        "format": "<span font-weight=\"bold\">{}</span>",
+        "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
     },
-	"custom/playerctl": {
-        "format": "🎵 {}",
-        "format-paused": "⏸ {}",
-        "format-stopped": "⏹ Nada tocando",
-        "max-length": 50,
-        "interval": 1,
-        "exec": "playerctl metadata --format '{{artist}} - {{title}}'",
-        "on-click": "playerctl play-pause",
-        "on-click-right": "playerctl stop",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
-    },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources folder
-        "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
+    "custom/playerctl": {
+    "format": "<span font-weight=\"bold\">🎵 {}</span>",
+    "format-paused": "<span font-weight=\"bold\">⏸ {}</span>",
+    "format-stopped": "<span font-weight=\"bold\">⏹ Nada tocando</span>",
+    "max-length": 50,
+    "interval": 1,
+    "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}'",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "playerctl -p spotify stop",
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify previous"
+},
     "custom/power": {
-        "format" : "⏻ ",
-	"on-click": "nwg-bar"}
+        "format": "<span font-weight=\"bold\" font='18'>⏻</span> ",
+        "on-click": "nwg-bar"
     }
 }
