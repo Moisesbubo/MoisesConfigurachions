@@ -1,0 +1,8 @@
+*
+!.gitignore
+!dunst/
+!fastfetch/
+!hypr/
+!nvim/
+!rofi/
+!waybar/
