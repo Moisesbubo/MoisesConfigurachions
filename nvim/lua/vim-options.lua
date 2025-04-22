@@ -4,6 +4,7 @@ vim.cmd("set rnu")
 
 --Cursor line
 vim.cmd("set cursorline")
+vim.cmd("highlight CursorLineNr ctermfg=208 guifg=#FFA500 ")
 vim.cmd("set signcolumn=yes")
 vim.cmd("set colorcolumn=80")
 
@@ -21,7 +22,8 @@ vim.cmd("set incsearch")
 vim.cmd("set smartcase")
 vim.cmd("set ignorecase")
 
+--Scroll
+vim.cmd("set scrolloff=4")
+
 --Mapping
 vim.g.mapleader = " "
-
-vim.cmd("set scrolloff=4")
