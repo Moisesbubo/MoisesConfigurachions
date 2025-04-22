@@ -23,14 +23,31 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      lspconfig.lua_ls.setup({})
-      lspconfig.pylsp.setup({})
+      lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            format = {
+              enable = true,
+            }
+          }
+        }
+      })
+      lspconfig.pylsp.setup({
+        settings = {
+          pyslsp = {
+            plugins = {
+              black = { enabled = true }
+            }
+          }
+        }
+      })
       lspconfig.html.setup({})
       lspconfig.cssls.setup({})
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition,{})
-      vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+      vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+      vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
     end
   }
 }
