@@ -1,2 +1,4 @@
-Este projeto está sendo usado para armazenar meu sistema operacional e suas
-ferramentas, estou aprendendo e anotando.
+This repository is being used to store my system configurations.
+
+I currently use Arch Linux + Hyprland
+Neovim, Fish and Ghostty
