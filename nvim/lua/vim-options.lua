@@ -16,7 +16,6 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set smartindent")
 
 --Search
-
 vim.cmd("set hlsearch")
 vim.cmd("set incsearch")
 vim.cmd("set smartcase")
@@ -27,3 +26,7 @@ vim.cmd("set scrolloff=4")
 
 --Mapping
 vim.g.mapleader = " "
+
+--Resize Windows
+vim.keymap.set('n', '<C-h>', ':vertical resize -2<CR>', { noremap = true })
+vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>', { noremap = true })
