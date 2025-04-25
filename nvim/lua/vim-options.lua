@@ -24,7 +24,9 @@ vim.cmd("set ignorecase")
 --Scroll
 vim.cmd("set scrolloff=4")
 
---Mapping
+-- Linking clipboards
+vim.cmd("set clipboard=unnamedplus")
+
 vim.g.mapleader = " "
 
 --Resize Windows

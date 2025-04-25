@@ -13,6 +13,7 @@ return {
                     "lua_ls",
                     "pylsp",
                     "html",
+                    "clangd",
                     "cssls",
                     "marksman",
                     "texlab",
@@ -47,18 +48,21 @@ return {
             lspconfig.html.setup({
                 filetypes = { "html" }
             })
+            lspconfig.clangd.setup({
+                filetypes = { "c", "cpp" }
+            })
             lspconfig.cssls.setup({
                 filetypes = { "css" }
             })
             lspconfig.marksman.setup({
-                filetypes = {"md"}
+                filetypes = { "md" }
             })
             lspconfig.texlab.setup({
                 settings = {
                     texlab = {
                         build = {
                             executable = "latexmk",
-                            args = {"pdf", "-interaction=nonstopmode", "-synctex=1", "%f"},
+                            args = { "pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
                             onSave = true
                         },
                         forwardSearch = {
