@@ -20,15 +20,24 @@ vim.cmd("set hlsearch")
 vim.cmd("set incsearch")
 vim.cmd("set smartcase")
 vim.cmd("set ignorecase")
+vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>', { silent = true })
 
 --Scroll
 vim.cmd("set scrolloff=4")
 
--- Linking clipboards
-vim.cmd("set clipboard=unnamedplus")
-
+--Mapping
 vim.g.mapleader = " "
 
 --Resize Windows
 vim.keymap.set('n', '<C-h>', ':vertical resize -2<CR>', { noremap = true })
 vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>', { noremap = true })
+
+--Moving lines
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+--Clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+Y')
+vim.keymap.set({ 'v', 'n' }, '<leader>p', '"+p')
+vim.keymap.set({ 'v', 'n' }, '<leader>P', '"+P')
