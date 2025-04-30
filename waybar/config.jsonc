@@ -1,11 +1,6 @@
-// -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    "height": 30, 
     "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
         "custom/playerctl"
@@ -24,35 +19,10 @@
         "memory",
         "custom/power"
     ],
+
     // Modules configuration
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    "hyprland/workspaces": {
+        "hyprland/workspaces": {
         "format": "<span font-weight=\"bold\">{}</span>"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "tray": {
         "spacing": 10
@@ -107,7 +77,8 @@
         "format": "<span font-weight=\"bold\">{}</span>",
         "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
     },
-    "custom/playerctl": {
+    
+"custom/playerctl": {
     "format": "<span font-weight=\"bold\">🎵 {}</span>",
     "format-paused": "<span font-weight=\"bold\">⏸ {}</span>",
     "format-stopped": "<span font-weight=\"bold\">⏹ Nada tocando</span>",
@@ -118,9 +89,12 @@
     "on-click-right": "playerctl -p spotify stop",
     "on-scroll-up": "playerctl -p spotify next",
     "on-scroll-down": "playerctl -p spotify previous"
-},
-    "custom/power": {
-        "format": "<span font-weight=\"bold\" font='18'>⏻</span> ",
+        },
+
+ "custom/power": {
+        "format": "<span font-weight=\"bold\" font='18'> ⏻ </span> ",
         "on-click": "nwg-bar"
     }
+
+
 }
