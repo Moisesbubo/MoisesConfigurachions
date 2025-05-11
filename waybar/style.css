@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background: #000000;
+    background: rgba(00, 00, 00, 0.6);
     color: #e5e9f0;
 }
 
@@ -39,6 +39,7 @@ window#waybar {
 #temperature,
 #network,
 #pulseaudio,
+#custom-spotify,
 #tray {
     padding: 0 12px 0px 12px;
     margin: 0 2px;
@@ -82,20 +83,9 @@ window#waybar {
     border-bottom-color: #3b4252;
 }
 
-#custom-playerctl {}
-
-#custom-playerctl .playing {
-    color: #1db954;
+#custom-spotify {
+    border-bottom-color: #1db954;
 }
-
-#custom-playerctl .paused {
-    color: #f5a623;
-}
-
-#custom-playerctl .stopped {
-    color: #dcdcdc;
-}
-
 @keyframes blink {
     to {
         border-bottom-color: #e5e9f0;
@@ -105,6 +95,7 @@ window#waybar {
 
 button:hover,
 #clock:hover,
+#custom-spotify:hover,
 #battery:hover,
 #cpu:hover,
 #memory:hover,

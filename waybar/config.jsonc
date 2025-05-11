@@ -3,7 +3,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
         "hyprland/workspaces",
-        "custom/playerctl"
+        "custom/spotify"
     ],
     "modules-center": [
         "custom/wayves_left",
@@ -26,6 +26,10 @@
     },
     "tray": {
         "spacing": 10
+    },
+
+    "hyprland/window":{
+        "max-length": 50
     },
     "clock": {
         "timezone": "America/Porto_Velho",
@@ -78,23 +82,18 @@
         "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
     },
     
-"custom/playerctl": {
-    "format": "<span font-weight=\"bold\">🎵 {}</span>",
-    "format-paused": "<span font-weight=\"bold\">⏸ {}</span>",
-    "format-stopped": "<span font-weight=\"bold\">⏹ Nada tocando</span>",
-    "max-length": 50,
-    "interval": 1,
-    "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}'",
-    "on-click": "playerctl -p spotify play-pause",
-    "on-click-right": "playerctl -p spotify stop",
-    "on-scroll-up": "playerctl -p spotify next",
-    "on-scroll-down": "playerctl -p spotify previous"
-        },
+"custom/spotify": {
 
- "custom/power": {
+    "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}'",
+    "max-length": 50,
+    "interval": 2,
+    "format": "{}  ",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotifyprevious"
+},
+    "custom/power": {
         "format": "<span font-weight=\"bold\" font='18'> ⏻ </span> ",
         "on-click": "nwg-bar"
     }
-
-
 }
