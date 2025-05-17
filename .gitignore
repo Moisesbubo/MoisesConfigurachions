@@ -1,8 +1,12 @@
-*
+/*
 !.gitignore
 !dunst/
 !fastfetch/
+!fish/
+!ghostty/
 !hypr/
 !nvim/
 !rofi/
 !waybar/
+!omf/
+!hyfetch.json
