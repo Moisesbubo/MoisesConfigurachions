@@ -29,7 +29,7 @@
     },
 
     "hyprland/window":{
-        "max-length": 50
+        "max-length": 30
     },
     "clock": {
         "timezone": "America/Porto_Velho",
