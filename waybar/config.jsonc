@@ -16,9 +16,8 @@
         "network",
         "pulseaudio",
         "cpu",
-        "memory",
-        "custom/power"
-    ],
+        "memory"
+           ],
 
     // Modules configuration
         "hyprland/workspaces": {
@@ -69,19 +68,7 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/wayves": {
-        "format": "<span font-weight=\"bold\">{}</span>",
-        "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
-    },
-    "custom/wayves_left": {
-        "format": "<span font-weight=\"bold\">{}</span>",
-        "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
-    },
-    "custom/wayves_right": {
-        "format": "<span font-weight=\"bold\">{}</span>",
-        "exec": "python /home/fifa/.config/cava/wayves/wayves.py -o cava -i cava -a cava"
-    },
-    
+        
 "custom/spotify": {
 
     "exec": "playerctl -p spotify metadata --format '{{artist}} - {{title}}'",
@@ -91,9 +78,6 @@
     "on-click": "playerctl -p spotify play-pause",
     "on-scroll-up": "playerctl -p spotify next",
     "on-scroll-down": "playerctl -p spotifyprevious"
-},
-    "custom/power": {
-        "format": "<span font-weight=\"bold\" font='18'> ⏻ </span> ",
-        "on-click": "nwg-bar"
     }
+
 }
